@@ -1,26 +1,18 @@
-## 大家fork后，务必改更改重启时间，有迹象表明同时重启的账户可能会同时失效！
-
-提示：
-
-1：用的人增多，肯定会步达拉斯的后尘，用起来别太狠，建议轻度用户使用
-
-2：脚本默认情况下：仅支持IBM伦敦仅支持IBM伦敦仅支持IBM伦敦 ，每天自动更新Xray并重启
-
-详细教程视频（YouTube）：https://youtu.be/2WGJbtsY6gw  https://youtu.be/Sz5f4YuWNUc
+#功能
+1.一次在 IBM 的 2个 不同的 Cloud Foundry应用上安装相同配置的Xray（vless+ws）
+2.每日定时重启（请更改重启时间，避免相同）
+3.仅支持IBM伦敦
+4.内存选择64M
 
 
    | Secrets变量 | 形式 |
   | --------------------- | ----------- |
   | `IBM_CF_USERNAME`       | IBM Cloud 邮箱地址 |
   | `IBM_CF_PASSWORD` | IBM Cloud 邮箱密码 |
-  | `IBM_CF_APP_NAME` | IBM Cloud 应用程序名 |
+  | `IBM_CF_APP_NAME1` | IBM Cloud 应用1程序名 |
+  | `IBM_CF_APP_NAME2` | IBM Cloud 应用2程序名 |
   | `V2_UUID` | 自定义UUID码 |
-  | `V2_WS_PATH_VMESS` </br> `V2_WS_PATH_VLESS` | 协议选择一个，填入自定义PATH路径 |
+  | `V2_WS_PATH_VLESS` | 填入自定义PATH路径 |
   
-注：VMESS默认的alterId为64
 
-本项目基于P3TERX项目修改而来，感谢P3TERX
-#本人修改项目
-1.内存改为256
-2.地址改为达拉斯
-3.自动重启时间修改
+本项目基于 https://github.com/YG-tsj/Xray-IBM-LD 项目修改而来
