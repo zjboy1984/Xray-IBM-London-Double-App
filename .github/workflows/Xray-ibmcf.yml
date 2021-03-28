@@ -47,7 +47,7 @@ jobs:
       run: |
         DOWNLOAD_URL="https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip"
         curl -fsSL "$DOWNLOAD_URL" -o "latest-xray.zip"
-        unzip latest-xray.zip xray geoip.dat geosite.dat
+        unzip latest-xray.zip xray
         rm latest-xray.zip
         chmod -v 755 xr*
         ./xray -version
@@ -57,7 +57,7 @@ jobs:
       run: |
         DOWNLOAD_URL="https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip"
         curl -fsSL "$DOWNLOAD_URL" -o "latest-xray.zip"
-        unzip latest-xray.zip xray geoip.dat geosite.dat
+        unzip latest-xray.zip xray
         rm latest-xray.zip
         chmod -v 755 xr*
         ./xray -version
