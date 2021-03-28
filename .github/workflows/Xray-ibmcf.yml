@@ -97,7 +97,11 @@ jobs:
           random-route: true
           command: base64 -d config > config.json; ./xray -config=config.json
           buildpacks:
-          - binary_buildpack    
+          - binary_buildpack      
+        
+    - name: Deploy Cloud Foundry App
+      run: cf push
+      
     - name: Generate Manifest File
       run: |
         cat << 123 > manifest.yml
@@ -108,6 +112,9 @@ jobs:
           command: base64 -d config > config.json; ./xray -config=config.json
           buildpacks:
           - binary_buildpack
-        
     - name: Deploy Cloud Foundry App
       run: cf push
+
+
+
+
