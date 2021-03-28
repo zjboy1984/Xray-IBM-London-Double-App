@@ -98,7 +98,6 @@ jobs:
             }
           ]
         }
-        
     - name: Generate Manifest File
       run: |
         cat << 123 > manifest.yml
@@ -108,7 +107,9 @@ jobs:
           random-route: true
           command: base64 -d config > config.json; ./${IBM_CF_APP_NAME1} -config=config.json
           buildpacks:
-          - binary_buildpack
+          - binary_buildpack    
+    - name: Generate Manifest File
+      run: |
         cat << 123 > manifest.yml
         applications:
         - name: ${IBM_CF_APP_NAME2}
