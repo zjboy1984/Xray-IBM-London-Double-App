@@ -23,7 +23,6 @@ jobs:
       IBM_CF_APP_NAME1: ${{ secrets.IBM_CF_APP_NAME1 }}
       IBM_CF_APP_NAME2: ${{ secrets.IBM_CF_APP_NAME2 }}
       V2_UUID: ${{ secrets.V2_UUID }}
-      V2_WS_PATH_VMESS: ${{ secrets.V2_WS_PATH_VMESS }}
       V2_WS_PATH_VLESS: ${{ secrets.V2_WS_PATH_VLESS }}
 
     steps:
@@ -47,7 +46,7 @@ jobs:
       run: |
         DOWNLOAD_URL="https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip"
         curl -fsSL "$DOWNLOAD_URL" -o "latest-xray.zip"
-        unzip latest-xray.zip xray
+        unzip latest-xray.zip xray geoip.dat geosite.dat LICENSE README.md
         rm latest-xray.zip
         chmod -v 755 xr*
         ./xray -version
@@ -57,7 +56,7 @@ jobs:
       run: |
         DOWNLOAD_URL="https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip"
         curl -fsSL "$DOWNLOAD_URL" -o "latest-xray.zip"
-        unzip latest-xray.zip xray
+        unzip latest-xray.zip xray geoip.dat geosite.dat LICENSE README.md
         rm latest-xray.zip
         chmod -v 755 xr*
         ./xray -version
