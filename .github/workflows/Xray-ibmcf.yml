@@ -93,10 +93,18 @@ jobs:
       run: |
         cat << 123 > manifest.yml
         applications:
-        - name: ${IBM_CF_APP_NAME}
+        - name: ${IBM_CF_APP_NAME1}
           memory: ${IBM_CF_APP_MEM}
           random-route: true
-          command: base64 -d config > config.json; ./${IBM_CF_APP_NAME} -config=config.json
+          command: base64 -d config > config.json; ./${IBM_CF_APP_NAME1} -config=config.json
+          buildpacks:
+          - binary_buildpack
+        cat << 123 > manifest.yml
+        applications:
+        - name: ${IBM_CF_APP_NAME2}
+          memory: ${IBM_CF_APP_MEM}
+          random-route: true
+          command: base64 -d config > config.json; ./${IBM_CF_APP_NAME2} -config=config.json
           buildpacks:
           - binary_buildpack
         
